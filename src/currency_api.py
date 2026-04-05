@@ -2,24 +2,25 @@ import requests
 import json
 import os
 import logging
+from datetime import datetime
 
 
 def get_eur_usd_status():
     logging.info("Starting currency API request")
+
+    checked_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     result = {
         "base": "EUR",
         "target": "USD",
         "today_rate": None,
         "yesterday_rate": None,
-        "status": "unknown"
+        "status": "unknown",
+        "checked_at": checked_at
     }
 
     try:
-        # Frankfurter latest rate
         today_url = "https://api.frankfurter.dev/v1/latest?base=EUR&symbols=USD"
-
-        # Frankfurter previous working-day rate
         yesterday_url = "https://api.frankfurter.dev/v1/2026-04-01?base=EUR&symbols=USD"
 
         today_response = requests.get(today_url, timeout=10)

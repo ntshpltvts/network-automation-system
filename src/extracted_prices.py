@@ -3,12 +3,14 @@ import re
 import csv
 import os
 import logging
+from datetime import datetime
 
 
 def extract_prices():
     logging.info("Starting Lidl price extraction")
 
     products = []
+    checked_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     try:
         file_path = "config/lidl.html"
@@ -62,7 +64,8 @@ def extract_prices():
                 products.append({
                     "product_name": product,
                     "normal_price": price,
-                    "lidl_plus_price": plus_price
+                    "lidl_plus_price": plus_price,
+                    "checked_at": checked_at
                 })
 
         logging.info(f"Extracted {len(products)} products")
@@ -72,7 +75,7 @@ def extract_prices():
         output_file = "data/processed/lidl_prices.csv"
 
         with open(output_file, "w", newline="", encoding="utf-8") as file:
-            fieldnames = ["product_name", "normal_price", "lidl_plus_price"]
+            fieldnames = ["product_name", "normal_price", "lidl_plus_price", "checked_at"]
             writer = csv.DictWriter(file, fieldnames=fieldnames)
 
             writer.writeheader()
@@ -83,5 +86,6 @@ def extract_prices():
 
     except Exception as e:
         logging.error(f"Error in extraction: {e}")
+        print("Error in extraction:", e)
 
     return products

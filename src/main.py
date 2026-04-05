@@ -1,13 +1,13 @@
-import csv
+import os
 import logging
-from datetime import datetime
-from bs4 import BeautifulSoup
-import re
+
 from extracted_prices import extract_prices
+from currency_api import get_eur_usd_status
+
 
 def main():
+    os.makedirs("logs", exist_ok=True)
 
-    # Setup logging
     logging.basicConfig(
         filename="logs/app.log",
         level=logging.INFO,
@@ -17,57 +17,22 @@ def main():
     logging.info("System started")
 
     try:
+        print("Running Lidl price extraction...\n")
         products = extract_prices()
+        logging.info(f"Lidl extraction finished with {len(products)} products")
 
-        print("\nProducts from scraper:\n")
-        for p in products:
-            print(p)
+        print("\nRunning currency API check...\n")
+        currency_result = get_eur_usd_status()
+        logging.info("Currency API check finished")
 
-        logging.info(f"Extracted {len(products)} products")
-
-    except Exception as e:
-        print("Error:", e)
-        logging.error(f"Error: {e}")
-        '''input_file = "config/watchlist.csv"
-        output_file = "data/processed/watchlist_checked.csv"
-
-        rows = []
-
-        # Read CSV
-        with open(input_file, mode="r") as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                # Add timestamp to each row
-                row["checked_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                rows.append(row)
-        
-        if not rows:
-            print("No data found in CSV file!")
-            logging.warning("CSV file is empty")
-            return
-
-        print("Loaded data:")
-        print(rows)
-
-        # Write new CSV
-        with open(output_file, mode="w", newline="") as file:
-            fieldnames = rows[0].keys()
-            writer = csv.DictWriter(file, fieldnames=fieldnames)
-
-            writer.writeheader()
-            writer.writerows(rows)
-
-        print("New file created:", output_file)
-        logging.info("File processed successfully")
+        print("\nCurrency result:")
+        print(currency_result)
 
     except Exception as e:
-        print("Error:", e)
-        logging.error(f"Error: {e}")'''
-    
+        print("System error:", e)
+        logging.error(f"System error: {e}")
 
     logging.info("System finished")
-
- 
 
 
 if __name__ == "__main__":
