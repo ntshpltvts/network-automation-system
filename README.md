@@ -40,14 +40,14 @@ The system demonstrates **data collection, processing, storage, and automated no
 
 ## Project Structure
 src/
--main.py # Main controller
--extracted_prices.py # Lidl scraping logic
--compare_prices.py # Price comparison logic
--currency_api.py # API integration
--email_notifier.py # Email sending
+-main.py (Main controller)
+-extracted_prices.py (Lidl scraping logic)
+-compare_prices.py (Price comparison logic)
+-currency_api.py (API integration)
+-email_notifier.py (Email sending)
 
 config/
--lidl.html # Saved Lidl webpage
+-lidl.html (Saved Lidl webpage)
 
 data/
 -processed/
