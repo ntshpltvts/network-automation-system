@@ -54,7 +54,7 @@ data/
  ── lidl_prices.csv
  ── lidl_prices_old.csv
 
-── raw/
+raw/
  ── currency_rates.json
 
 logs/
