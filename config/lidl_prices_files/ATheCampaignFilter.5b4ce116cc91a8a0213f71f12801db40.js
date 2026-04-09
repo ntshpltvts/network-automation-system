@@ -1,0 +1,1 @@
+document.body.addEventListener("click",function(e){if(e.target.classList.contains("on-click-open-parent-link")){let n=e.target.parentElement;for(;"A"!==n.nodeName.toUpperCase();)n=n.parentElement;window.location.replace(n.href)}});

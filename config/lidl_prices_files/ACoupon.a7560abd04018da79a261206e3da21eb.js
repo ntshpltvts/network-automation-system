@@ -1,0 +1,1 @@
+!function(){const t="data-coupon-code",o=document.querySelectorAll(`[${t}]`),e=Array.prototype.slice.call(o);function c(){const o=this.getAttribute(t);navigator.clipboard.writeText(o),this.classList.remove("ACoupon__CopyFileIcon"),this.classList.add("icon-hook-circle")}for(let t=0;t<e.length;t++)e[t].addEventListener("click",c)}();

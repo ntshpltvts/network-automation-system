@@ -1,0 +1,1 @@
+!function(){const t=document.querySelector(".AErrorPage");if(t){const e=t.getAttribute("data-status-code"),a=t.getAttribute("data-page-type"),i=t.getAttribute("data-page-name");window.mindShiftNav=window.mindShiftNav||{isSearchEnabled:!0},"404"===e&&"CAMPAIGN"===a&&i&&window.mindShiftNav.isSearchEnabled&&window.location.replace(`/q/search?q=${i}`)}}();

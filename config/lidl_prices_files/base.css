@@ -1,0 +1,49 @@
+.store-search__dialog {
+    position: fixed;
+    z-index: 9001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .45);
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+}
+
+.store-search__dialog--no-background {
+    background-color: transparent;
+}
+
+.store-search__wrapper {
+    background-color: #fefefe;
+    width: 100%;
+    max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    position: relative;
+}
+
+.store-search__loader {
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 60px);
+    border: 16px solid #e3e4e5;
+    border-top-color: #0050aa;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

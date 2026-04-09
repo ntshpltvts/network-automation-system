@@ -1,0 +1,71 @@
+@font-face {
+    font-family: LidlFontPro;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/cdn/assets/fonts/2.0.0/LidlFontPro-Book.woff2) format("woff2"), url(/cdn/assets/fonts/2.0.0/LidlFontPro-Book.woff) format("woff")
+}
+
+@font-face {
+    font-family: LidlFontPro;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/cdn/assets/fonts/2.0.0/LidlFontPro-Semibold.woff2) format("woff2"), url(/cdn/assets/fonts/2.0.0/LidlFontPro-Semibold.woff) format("woff")
+}
+
+@font-face {
+    font-family: LidlFontPro;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/cdn/assets/fonts/2.0.0/LidlFontPro-Bold.woff2) format("woff2"), url(/cdn/assets/fonts/2.0.0/LidlFontPro-Bold.woff) format("woff")
+}
+
+@font-face {
+    font-family: LidlFontCondPro;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/cdn/assets/fonts/2.0.0/LidlFontCondPro-Regular.woff2) format("woff2"), url(/cdn/assets/fonts/2.0.0/LidlFontCondPro-Regular.woff) format("woff")
+}
+
+@font-face {
+    font-family: LidlFontCondPro;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/cdn/assets/fonts/2.0.0/LidlFontCondPro-Semibold.woff2) format("woff2"), url(/cdn/assets/fonts/2.0.0/LidlFontCondPro-Semibold.woff) format("woff")
+}
+
+@font-face {
+    font-family: LidlFontCondPro;
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/cdn/assets/fonts/2.0.0/LidlFontCondPro-Bold.woff2) format("woff2"), url(/cdn/assets/fonts/2.0.0/LidlFontCondPro-Bold.woff) format("woff")
+}
+
+@font-face {
+    font-family: font-fallback;
+    src: local("arial");
+    size-adjust: 98.58%;
+    ascent-override: 135%;
+    descent-override: 65%;
+    line-gap-override: 0%
+}
+
+.ods-base {
+    font-family: LidlFontPro, font-fallback, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Noto Sans, Liberation Sans, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #222
+}
+
+.ods-base *, .ods-base *:before, .ods-base *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}

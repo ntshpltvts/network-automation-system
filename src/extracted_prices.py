@@ -67,6 +67,8 @@ def extract_prices():
                     "lidl_plus_price": plus_price,
                     "checked_at": checked_at
                 })
+        if not products:
+            logging.warning("No Lidl products were extracted")
 
         logging.info(f"Extracted {len(products)} products")
 

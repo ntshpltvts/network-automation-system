@@ -32,6 +32,14 @@ def get_eur_usd_status():
         today_data = today_response.json()
         yesterday_data = yesterday_response.json()
 
+        if "rates" not in today_data or "USD" not in today_data["rates"]:
+            logging.warning("USD rate not found in today's API response")
+            return result
+
+        if "rates" not in yesterday_data or "USD" not in yesterday_data["rates"]:
+            logging.warning("USD rate not found in yesterday's API response")
+            return result
+
         result["today_rate"] = today_data["rates"]["USD"]
         result["yesterday_rate"] = yesterday_data["rates"]["USD"]
 
@@ -41,6 +49,8 @@ def get_eur_usd_status():
             result["status"] = "down"
         else:
             result["status"] = "same"
+
+        
 
         os.makedirs("data/raw", exist_ok=True)
 
