@@ -39,26 +39,33 @@ The system demonstrates **data collection, processing, storage, and automated no
 ---
 
 ## Project Structure
-src/
--main.py (Main controller)
--extracted_prices.py (Lidl scraping logic)
--compare_prices.py (Price comparison logic)
--currency_api.py (API integration)
--email_notifier.py (Email sending)
-
-config/
--lidl.html (Saved Lidl webpage)
-
-data/
--processed/
- -lidl_prices.csv
- -lidl_prices_old.csv
-
-raw/
- -currency_rates.json
-
-logs/
- -app.log
+```
+network-automation-system/
+│
+├── src/
+│ ├── main.py # Main controller
+│ ├── extracted_prices.py # Lidl scraping logic
+│ ├── compare_prices.py # Price comparison logic
+│ ├── currency_api.py # API integration
+│ └── email_notifier.py # Email sending
+│
+├── config/
+│ └── lidl.html # Saved Lidl webpage
+│
+├── data/
+│ ├── processed/
+│ │ ├── lidl_prices.csv
+│ │ └── lidl_prices_old.csv
+│ │
+│ └── raw/
+│ └── currency_rates.json
+│
+├── logs/
+│ └── app.log
+│
+├── requirements.txt
+└── README.md
+```
 
 
 ---
