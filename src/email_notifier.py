@@ -5,9 +5,9 @@ import logging
 
 def send_email(subject, body):
     # Email account configuration
-    sender_email = "your_email@gmail.com"
-    receiver_email = "your_email@gmail.com"
-    app_password = "your_app_password_here"
+    sender_email = "sunshine.355ie@gmail.com"
+    receiver_email = "sunshine.355ie@gmail.com"
+    app_password = "tpoq rpby mgiq awrq"
 
     try:
         # Create a plain text email message
