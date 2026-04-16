@@ -4,19 +4,28 @@ import logging
 
 
 def send_email(subject, body):
-    sender_email = "sunshine.355ie@gmail.com"
-    receiver_email = "sunshine.355ie@gmail.com"
-    app_password = "tpoq rpby mgiq awrq"
+    # Email account configuration
+    sender_email = "your_email@gmail.com"
+    receiver_email = "your_email@gmail.com"
+    app_password = "your_app_password_here"
 
     try:
+        # Create a plain text email message
         msg = MIMEText(body)
         msg["Subject"] = subject
         msg["From"] = sender_email
         msg["To"] = receiver_email
 
+        # Connect to Gmail's SMTP server
         server = smtplib.SMTP("smtp.gmail.com", 587)
+
+        # Upgrade the connection to a secure encrypted session
         server.starttls()
+
+        # Authenticate using an app password
         server.login(sender_email, app_password)
+
+        # Send the email and close the connection
         server.send_message(msg)
         server.quit()
 
@@ -25,5 +34,3 @@ def send_email(subject, body):
     except Exception as e:
         logging.error(f"Email error: {e}")
         print("Email error:", e)
-        
-        
