@@ -2,9 +2,9 @@
     "today": {
         "amount": 1.0,
         "base": "EUR",
-        "date": "2026-04-15",
+        "date": "2026-04-20",
         "rates": {
-            "USD": 1.178
+            "USD": 1.176
         }
     },
     "yesterday": {
@@ -18,9 +18,9 @@
     "comparison": {
         "base": "EUR",
         "target": "USD",
-        "today_rate": 1.178,
+        "today_rate": 1.176,
         "yesterday_rate": 1.1605,
         "status": "up",
-        "checked_at": "2026-04-16 09:46:54"
+        "checked_at": "2026-04-21 14:03:43"
     }
 }

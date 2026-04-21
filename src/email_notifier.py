@@ -7,7 +7,7 @@ def send_email(subject, body):
     # Email account configuration
     sender_email = "sunshine.355ie@gmail.com"
     receiver_email = "sunshine.355ie@gmail.com"
-    app_password = "tpoq rpby mgiq awrq"
+    app_password = "xdrk qngj ztjy utaf"
 
     try:
         # Create a plain text email message
